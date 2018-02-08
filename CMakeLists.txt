@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(Eigen)
 
-add_executable(PhyBasedAnim src/main.cpp src/Components/Spring.cpp src/Components/Spring.h)
+add_executable(PhyBasedAnim src/main.cpp src/components/Spring.cpp src/components/Spring.h src/utility/FileHelper.cpp src/utility/FileHelper.h)
