@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Eigen/Dense"
-#include "Eigen/Core"
+#include "Dense"
+#include "Core"
 
 using Eigen::MatrixXd;
 
