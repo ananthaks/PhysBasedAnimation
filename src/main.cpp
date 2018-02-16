@@ -2,8 +2,15 @@
 #include "Dense"
 #include "utility/FileHelper.h"
 #include "components/Spring.h"
+#include <string>
+
+#include <Partio.h>
+#include "core/Particle.cpp"
 
 using Eigen::MatrixXd;
+
+using T = double;
+constexpr int dim = 3;
 
 static char *inputFile = "E:\\Git\\PhysBasedAnimation\\actual_input.txt";
 static char *outputFile = "E:\\Git\\PhysBasedAnimation\\actual_output.txt";
@@ -129,11 +136,40 @@ void printResults(std::vector<float> &results) {
     }
 }
 
+template <class T, int dim>
+void writePartio(const std::string& particleFile)
+{
+    Partio::ParticlesDataMutable* parts = Partio::create();
+    Partio::ParticleAttribute posH, vH, mH;
+    mH = parts->addAttribute("m", Partio::VECTOR, 1);
+    posH = parts->addAttribute("position", Partio::VECTOR, 3);
+    vH = parts->addAttribute("v", Partio::VECTOR, 3);
+    for (int i=0; i<3; i++){
+        int idx = parts->addParticle();
+        float* m = parts->dataWrite<float>(mH, idx);
+        float* p = parts->dataWrite<float>(posH, idx);
+        float* v = parts->dataWrite<float>(vH, idx);
+        m[0] = (T)(i + 1);
+        for (int k = 0; k < 3; k++)
+            p[k] = (T)(i + 1);
+        for (int k = 0; k < 3; k++)
+            v[k] = (T)(i + 100);
+    }
+
+    Partio::write(particleFile.c_str(), *parts);
+    parts->release();
+}
+
 
 int main()
 {
-    std::vector<float> results;
-    computeForce(results);
+
+    std::string file="test.bgeo";
+
+    //writePartio<T,dim>(file);
+
+    //std::vector<float> results;
+    //computeForce(results);
     //printResults(results);
 
 }
