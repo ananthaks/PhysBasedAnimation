@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Dense"
 #include "Core"
-#include "../../../cmake-build-debug/partio-src/src/lib/Partio.h"
+#include "Partio.h"
 
 using Eigen::MatrixXd;
 

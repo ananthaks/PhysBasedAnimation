@@ -24,7 +24,8 @@ add_cispba_executable(example src/main.cpp
         src/mesh/TetraMesh.h
         src/mesh/Tetrahedron.h
         src/utility/FileHelper.cpp
-        src/utility/FileHelper.h)
+        src/utility/FileHelper.h
+        src/globalincludes.h)
 
 include_directories(Eigen)
 
