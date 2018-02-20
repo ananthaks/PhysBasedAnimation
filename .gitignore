@@ -46,6 +46,7 @@ cmake-build-debug/*
 .DS_Store
 
 .idea/*
+*/.idea/*
 
 # Added 20 Feb
 cmake-build-debug/*
