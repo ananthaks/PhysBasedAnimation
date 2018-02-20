@@ -1,14 +1,11 @@
-//
-// Created by Anantha Srinivas on 08/02/18.
-//
 
 #include "Spring.h"
 
-Spring::Spring() : mSpringConstant(0.f), mRestLength(0.f), mCurrLength(0.f), mDampConstant(0.f) {}
+Spring::Spring() : mDampConstant(0.f) , mSpringConstant(0.f), mRestLength(0.f), mCurrLength(0.f) {}
 
-Spring::Spring(float kConstant, float bDampConstant, float restLen) : mSpringConstant(kConstant), mDampConstant(bDampConstant), mRestLength(restLen), mCurrLength(0.f) {}
+Spring::Spring(float kConstant, float bDampConstant, float restLen) : mDampConstant(bDampConstant), mSpringConstant(kConstant) , mRestLength(restLen), mCurrLength(0.f) {}
 
-Spring::Spring(const Spring& spring) : mSpringConstant(spring.getSpringConstant()), mDampConstant(spring.getDampConstant()), mRestLength(spring.getRestLength()), mCurrLength(spring.getCurrLength()) {}
+Spring::Spring(const Spring& spring) : mDampConstant(spring.getDampConstant()), mSpringConstant(spring.getSpringConstant()) , mRestLength(spring.getRestLength()), mCurrLength(spring.getCurrLength()) {}
 
 float Spring::getRestLength() const {
     return mRestLength;

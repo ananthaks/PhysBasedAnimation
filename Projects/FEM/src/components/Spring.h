@@ -1,6 +1,3 @@
-//
-// Created by Anantha Srinivas on 08/02/18.
-//
 
 #pragma once
 

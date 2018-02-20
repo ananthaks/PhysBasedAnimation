@@ -47,3 +47,9 @@ cmake-build-debug/*
 
 .idea/*
 
+# Added 20 Feb
+cmake-build-debug/*
+Build/*
+
+
+
