@@ -25,7 +25,14 @@ add_cispba_executable(example src/main.cpp
         src/mesh/Tetrahedron.h
         src/utility/FileHelper.cpp
         src/utility/FileHelper.h
-        src/globalincludes.h)
+        src/globalincludes.h
+        src/objects/cube.1.edge
+        src/objects/cube.1.ele
+        src/objects/cube.1.face
+        src/objects/cube.1.node
+        src/objects/cube.poly
+        src/scene/squareplane.h
+        src/scene/shape.h)
 
 include_directories(Eigen)
 

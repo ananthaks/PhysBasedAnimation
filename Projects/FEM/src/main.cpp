@@ -1,8 +1,8 @@
 #include "FEMSolver.h"
 #include "globalincludes.h"
 
-#define TEST_EIGEN
-#define TEST_PARTIO
+//#define TEST_EIGEN
+//#define TEST_PARTIO
 
 void checkIfEigenWorks() {
     MatrixXd m(2,2);
@@ -60,7 +60,7 @@ int main()
 
     // Cook My Jello!
 
-    FEMSolver solver;
+    FEMSolver<float,3> solver(120);
     solver.initializeMesh();
     solver.cookMyJello();
 
